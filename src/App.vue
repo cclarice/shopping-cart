@@ -160,7 +160,6 @@ export default defineComponent({
 
       if (target?.value) {
         const value = Number(target.value)
-        console.log(value)
 
         if (target.value.includes('-')) {
           target.value = String(item.amount)
@@ -283,7 +282,6 @@ button {
         tr {
           display:   flex;
           flex-flow: column;
-          border:    none;
           gap:       8px;
           background-color: var(--table);
           border: 1px solid var(--table-border);
