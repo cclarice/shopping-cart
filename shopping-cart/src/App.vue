@@ -182,27 +182,28 @@ button {
 }
 
 .theme-button {
-  position: absolute;
-  right: max(calc((100vw - 1008px) / 2), 8px);
-  top: 12px;
-  padding: 3px;
+  position:  absolute;
+  right:     max(calc((100vw - 1008px) / 2), 8px);
+  top:       12px;
+  padding:   3px;
   min-width: 32px;
-  height: 32px;
+  height:    32px;
+
   & img {
-    width: 24px;
+    width:  24px;
     height: 24px;
   }
 }
 
 .cart {
-  display: flex;
-  flex-flow: column;
+  display:          flex;
+  flex-flow:        column;
   background-color: var(--card-background);
-  border: var(--card-border);
-  padding: 11px 15px;
-  box-shadow: 0 6px 12px #00000044;
-  max-width: 100%;
-  gap: 8px;
+  border:           var(--card-border);
+  padding:          11px 15px;
+  box-shadow:       0 6px 12px #00000044;
+  max-width:        100%;
+  gap:              8px;
 
   &__add-button {
     width: fit-content;
@@ -210,33 +211,39 @@ button {
 
   &__table {
     background-color: var(--table);
-    width: 100%;
-    border: 1px solid var(--table-border);
-    border-collapse: collapse;
+    width:            100%;
+    border:           1px solid var(--table-border);
+    border-collapse:  collapse;
+
     tr,
     td, {
-      border: 1px solid var(--table-border);
+      border:          1px solid var(--table-border);
       border-collapse: collapse;
-      align-items: center;
-      padding: 4px 12px;
+      align-items:     center;
+      padding:         4px 12px;
+
       .select {
         display: inline-flex;
       }
     }
+
     td:not(:first-child) {
       width: 0;
     }
+
     thead {
       background-color: var(--table-header);
-      font-size: 14px;
+      font-size:        14px;
     }
+
     tbody {
       tr:nth-child(2n) {
         background-color: var(--table-nth-child);
       }
+
       tr:last-child {
         background-color: var(--table-header);
-        font-size: 14px;
+        font-size:        14px;
       }
     }
   }

@@ -1,8 +1,8 @@
 :root {
-  --background:          #FFFFFF;
-  --default:             #000000;
+  --background:          #FFF;
+  --default:             #000;
   --disabled:            #8C8C8C;
-  --button:              #FFFFFF;
+  --button:              #FFF;
   --button-border-color: #C4C4C4;
   --button-border-focus: 1px solid #87AFDA;
   --button-outline:      2px solid #97C3F3;
@@ -19,8 +19,8 @@
   @media screen {
     &[data-theme='dark'] {
       --background:          #2B2B2B;
-      --default:             #BBBBBB;
-      --disabled:            #777777;
+      --default:             #BBB;
+      --disabled:            #777;
       --button:              #4C5052;
       --button-border-color: #5E6060;
       --button-border-focus: 1px solid #456A90;
@@ -36,6 +36,6 @@
       --scrollbar-thumb:     #5E606088;
     }
   }
-  --button-border:        1px solid var(--button-border-color);
+  --button-border:       1px solid var(--button-border-color);
 }
 

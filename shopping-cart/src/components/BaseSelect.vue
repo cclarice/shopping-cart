@@ -102,63 +102,66 @@ export default defineComponent({
 
 <style lang="scss">
 .select {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  min-width: 72px;
-  height: 24px;
-  border: var(--button-border);
-  outline: 0 solid transparent;
+  position:         relative;
+  display:          flex;
+  align-items:      center;
+  width:            fit-content;
+  min-width:        72px;
+  height:           24px;
+  border:           var(--button-border);
+  outline:          0 solid transparent;
   background-color: var(--button);
-  border-radius: 3px;
-  user-select: none;
+  border-radius:    3px;
+  user-select:      none;
 
   &:focus {
-    border: var(--button-border-focus);
+    border:  var(--button-border-focus);
     outline: var(--button-outline);
   }
 
   &:disabled {
-    color: var(--disabled);
-    outline: 0 solid transparent;
+    color:            var(--disabled);
+    outline:          0 solid transparent;
     background-color: var(--button-disabled);
   }
 
   &__icon {
-    width: 22px;
-    height: 22px;
-    padding: 3px;
+    width:       22px;
+    height:      22px;
+    padding:     3px;
     border-left: var(--button-border);
   }
+
   &__options {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
+    display:          flex;
+    flex-direction:   column;
+    position:         absolute;
     background-color: var(--button);
-    border: var(--button-border);
-    padding: 4px 0;
-    gap: 1px;
-    height: fit-content;
-    max-height: 500%;
-    top: calc(100%);
-    left: -1px;
-    min-width: calc(100% + 2px);
-    z-index: 1;
+    border:           var(--button-border);
+    padding:          4px 0;
+    gap:              1px;
+    height:           fit-content;
+    max-height:       500%;
+    top:              calc(100%);
+    left:             -1px;
+    min-width:        calc(100% + 2px);
+    z-index:          1;
   }
+
   &__option {
-    display: flex;
-    padding: 0 12px;
-    align-items: center;
-    height: 22px;
+    display:          flex;
+    padding:          0 12px;
+    align-items:      center;
+    height:           22px;
     background-color: var(--button);
-    outline: none;
+    outline:          none;
 
     &:hover,
     &:focus {
       background-color: var(--button-disabled);
     }
   }
+
   &__selected-option {
     margin: 0 12px;
   }
