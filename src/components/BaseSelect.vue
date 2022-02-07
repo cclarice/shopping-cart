@@ -1,7 +1,7 @@
 <template>
   <div class="select"
        tabindex="0"
-       @wheel.passive="scroll($event)"
+       @comment_wheel="scroll($event)"
        @click="openDropdown"
        @keyup="(event) => {
          event.key === ' ' || event.key === 'Enter'

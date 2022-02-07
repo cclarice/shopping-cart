@@ -16,7 +16,7 @@ body {
 }
 
 html {
-  width:            100vw;
+  width:            100%;
   min-height:       100vh;
   align-items:      center;
   font-weight:      400;
@@ -26,12 +26,12 @@ html {
   overflow-x:       hidden;
 
   &::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-thumb);
-    border:           2px solid transparent;
+    border:           1px solid transparent;
     border-radius:    6px;
     background-clip:  content-box;
   }
@@ -42,9 +42,9 @@ h1 {
 }
 
 body {
-  max-width: min(1024px, 100vw);
+  max-width: min(1024px, 100%);
   width:     1024px;
-  min-width: 280px; // Galaxy Fold
+  min-width: 272px; // Galaxy Fold
   padding:   18px 8px;
 }
 

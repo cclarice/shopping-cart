@@ -29,6 +29,9 @@
 			<tbody>
 				<tr v-for="item of cart" :key="item.id">
 					<td>
+            <span>
+              Товар
+            </span>
             <base-select :options="products"
                          :key="'name'"
                          :default="products.indexOf(products.find((product) => product.name === item.name))"
@@ -44,9 +47,15 @@
             </base-select>
 					</td>
 					<td>
+            <span>
+              Стоимость
+            </span>
 						{{ item.price }}
 					</td>
 					<td>
+            <span>
+              Количество
+            </span>
             <input type="number" @input="setAmount(item, $event)" :value="item.amount" min="1" max="2147483647" step="1">
           </td>
 					<td>
@@ -225,6 +234,9 @@ button {
       .select {
         display: inline-flex;
       }
+      span {
+        display: none;
+      }
     }
 
     td:not(:first-child) {
@@ -244,6 +256,62 @@ button {
       tr:last-child {
         background-color: var(--table-header);
         font-size:        14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .cart {
+
+    &__table {
+      display:   flex;
+      flex-flow: column;
+      border:    none;
+      gap:       8px;
+
+      thead {
+        display: none;
+      }
+
+      tbody {
+        display:   flex;
+        flex-flow: column;
+        border:    none;
+        gap:       8px;
+
+        tr {
+          display:   flex;
+          flex-flow: column;
+          border:    none;
+          gap:       8px;
+          background-color: var(--table);
+          border: 1px solid var(--table-border);
+          border-radius: 6px;
+          padding: 8px 12px;
+          td {
+            display: flex;
+            width: 100%;
+            border: none;
+            padding: 0;
+            span {
+              display: inline;
+              min-width: 80px;
+            }
+          }
+          td:not(:first-child) {
+            width: 100%;
+          }
+          td:last-child {
+            flex-flow: row-reverse;
+          }
+        }
+        tr:last-child {
+          td:last-child,
+          td:first-child {
+            display: none;
+          }
+        }
       }
     }
   }
