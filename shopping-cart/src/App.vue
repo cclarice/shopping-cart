@@ -31,6 +31,7 @@
 					<td>
             <base-select :options="products"
                          :key="'name'"
+                         :default="products.indexOf(products.find((product) => product.name === item.name))"
                          @select="select(item, $event)">
               <template #selected="selected">
                 <div class="select__selected-option">
@@ -46,7 +47,7 @@
 						{{ item.price }}
 					</td>
 					<td>
-            <input type="number" v-model="item.amount" min="1" max="2147483647" step="1">
+            <input type="number" @input="setAmount(item, $event)" :value="item.amount" min="1" max="2147483647" step="1">
           </td>
 					<td>
             <button @click="remove(item.id)">
@@ -54,6 +55,20 @@
             </button>
           </td>
 				</tr>
+        <tr v-if="!cart.length">
+          <td> Пусто </td>
+          <td>
+            -
+          </td>
+          <td>
+            <input type="number" style="width: 113px; visibility: hidden">
+          </td>
+          <td>
+            <button style="visibility: hidden">
+              Удалить
+            </button>
+          </td>
+        </tr>
 				<tr>
 					<td/>
 					<td>
@@ -112,6 +127,7 @@ export default defineComponent({
     select (item: IItem, selected: IProduct): void {
       item.name = selected.name
       item.price = selected.price
+      localStorage.setItem('cart', JSON.stringify(this.cart))
     },
 		recalculateCartIds (from = 0): void {
       for (let i = from; i < this.cart.length; i++) {
@@ -129,6 +145,19 @@ export default defineComponent({
     },
     saveCart () {
       localStorage.setItem('cart', JSON.stringify(this.cart))
+    },
+    setAmount (item: IItem, event: InputEvent) {
+      const target = (event.target as HTMLInputElement)
+
+      if (target?.value) {
+        const value = Number(target.value)
+        console.log(value)
+
+        if (target.value.includes('-')) {
+          target.value = String(item.amount)
+        }
+        item.amount = value > 0 ? value : 1
+      }
     }
 	},
   created () {
