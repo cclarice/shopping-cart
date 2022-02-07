@@ -280,30 +280,35 @@ button {
         gap:       8px;
 
         tr {
-          display:   flex;
-          flex-flow: column;
-          gap:       8px;
+          display:          flex;
+          flex-flow:        column;
+          gap:              8px;
           background-color: var(--table);
-          border: 1px solid var(--table-border);
-          border-radius: 6px;
-          padding: 8px 12px;
+          border:           1px solid var(--table-border);
+          border-radius:    6px;
+          padding:          8px 12px;
+
           td {
             display: flex;
-            width: 100%;
-            border: none;
+            width:   100%;
+            border:  none;
             padding: 0;
+
             span {
-              display: inline;
+              display:   inline;
               min-width: 80px;
             }
           }
+
           td:not(:first-child) {
             width: 100%;
           }
+
           td:last-child {
             flex-flow: row-reverse;
           }
         }
+
         tr:last-child {
           td:last-child,
           td:first-child {
