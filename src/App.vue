@@ -136,7 +136,7 @@ export default defineComponent({
     select (item: IItem, selected: IProduct): void {
       item.name = selected.name
       item.price = selected.price
-      localStorage.setItem('cart', JSON.stringify(this.cart))
+      this.saveCart()
     },
 		recalculateCartIds (from = 0): void {
       for (let i = from; i < this.cart.length; i++) {
@@ -166,6 +166,7 @@ export default defineComponent({
         }
         item.amount = value > 0 ? value : 1
       }
+      this.saveCart()
     }
 	},
   created () {
