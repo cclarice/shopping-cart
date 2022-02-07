@@ -1,0 +1,41 @@
+:root {
+  --background:          #FFF;
+  --default:             #000;
+  --disabled:            #8C8C8C;
+  --button:              #FFF;
+  --button-border-color: #C4C4C4;
+  --button-border-focus: 1px solid #87AFDA;
+  --button-outline:      2px solid #97C3F3;
+  --button-disabled:     #F2F2F2;
+  --card-background:     #F2F2F2;
+  --card-border:         1px solid #D1D1D1;
+  --table:               #F8FAF8;
+  --table-border:        #D1D1D1;
+  --table-nth-child:     var(--card-background);
+  --table-header:        #E6E6E6;
+  --table-footer:        #F2F2F2;
+  --scrollbar-thumb:     #C4C4C488;
+
+  @media screen {
+    &[data-theme='dark'] {
+      --background:          #2B2B2B;
+      --default:             #BBB;
+      --disabled:            #777;
+      --button:              #4C5052;
+      --button-border-color: #5E6060;
+      --button-border-focus: 1px solid #456A90;
+      --button-outline:      2px solid #3D6185;
+      --button-disabled:     #3C3F41;
+      --card-background:     #3C3F41;
+      --card-border:         #323232;
+      --table:               var(--card-background);
+      --table-nth-child:     #383B3D;
+      --table-border:        #323232;
+      --table-header:        #4A4E52;
+      --table-footer:        #45494A;
+      --scrollbar-thumb:     #5E606088;
+    }
+  }
+  --button-border:       1px solid var(--button-border-color);
+}
+
